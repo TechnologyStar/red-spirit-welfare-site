@@ -1,0 +1,19 @@
+{
+  "name": "red-spirit-welfare-site",
+  "version": "1.0.0",
+  "description": "红色精神福利站 - 答题、集卡、小游戏领积分",
+  "private": true,
+  "scripts": {
+    "install:backend": "cd backend && npm install",
+    "install:frontend": "cd frontend && npm install",
+    "build:backend": "cd backend && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "init-db": "cd backend && npm run init-db",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "start": "cd backend && npm start"
+  },
+  "keywords": ["red-spirit", "welfare", "quiz", "cards", "games"],
+  "author": "",
+  "license": "MIT"
+}

@@ -1,15 +1,8 @@
 services:
-  - name: backend
+  - name: red-spirit-welfare-site
     type: web
-    buildCommand: cd backend && npm install && npm run build
-    startCommand: cd backend && npm start
     env:
+      NODE_ENV: production
+      PORT: 3001
       JWT_SECRET: ${JWT_SECRET}
       ADMIN_KEY: ${ADMIN_KEY}
-      
-  - name: frontend
-    type: web
-    buildCommand: cd frontend && npm install && npm run build
-    startCommand: cd frontend && npm run preview
-    env:
-      VITE_API_URL: ${backend.URL}

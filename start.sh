@@ -1,24 +1,30 @@
 #!/bin/bash
 
-echo "Starting Red Spirit Welfare Site..."
+echo "🚀 Starting Red Spirit Welfare Site..."
 
+# Install backend dependencies
+echo "📦 Installing backend dependencies..."
 cd backend
 npm install
-npm run init-db &
-BACKEND_PID=$!
 
-cd ../frontend
-npm install
+# Initialize database
+echo "🗄️ Initializing database..."
+npm run init-db
+
+# Build backend
+echo "🔨 Building backend..."
 npm run build
 
-cd ..
-wait $BACKEND_PID
-
-cd backend
-npm start &
-BACKEND_PID=$!
-
+# Install frontend dependencies
+echo "📦 Installing frontend dependencies..."
 cd ../frontend
-npm run preview
+npm install
 
-trap "kill $BACKEND_PID" EXIT
+# Build frontend
+echo "🔨 Building frontend..."
+npm run build
+
+# Start backend server
+echo "🌟 Starting server..."
+cd ../backend
+npm start
