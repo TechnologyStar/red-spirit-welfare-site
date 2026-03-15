@@ -174,3 +174,11 @@
 *.lz
 *.lzma
 *.iso
+
+# Database
+*.db
+*.db-shm
+*.db-wal
+
+# Project specific
+backend/data/

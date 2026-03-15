@@ -1,0 +1,15 @@
+services:
+  - name: backend
+    type: web
+    buildCommand: cd backend && npm install && npm run build
+    startCommand: cd backend && npm start
+    env:
+      JWT_SECRET: ${JWT_SECRET}
+      ADMIN_KEY: ${ADMIN_KEY}
+      
+  - name: frontend
+    type: web
+    buildCommand: cd frontend && npm install && npm run build
+    startCommand: cd frontend && npm run preview
+    env:
+      VITE_API_URL: ${backend.URL}
